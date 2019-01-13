@@ -21,3 +21,6 @@ Harvard's intro to computer science course.
 1. [Whodunit](https://lab.cs50.io/cs50/labs/2019/x/whodunit/): modify the bytes of a bitmap image file to change the colour of red pixels to reveal a message hidden in the noise.
 2. [Resize (more comfortable)](https://docs.cs50.net/2019/x/psets/3/resize/more/resize.html): modify the headers and pixels of a bitmap file to increase or decrease its size.
 3. [Recover](https://docs.cs50.net/2019/x/psets/3/recover/recover.html): find 50 JPEG files on a memory card by searching for the starting bytes of JPEG images.
+
+## Pset4
+1. [Speller (trie implementation)](https://docs.cs50.net/2019/x/psets/4/speller/trie/speller.html): store the words of a dictionary in a trie and then search the trie to see if passed words are spelt right. Also created functions to recursively count the words in the trie and recursively free the memory used by it at the end.
