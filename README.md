@@ -24,3 +24,6 @@ Harvard's intro to computer science course.
 
 ## Pset4
 1. [Speller (trie implementation)](https://docs.cs50.net/2019/x/psets/4/speller/trie/speller.html): store the words of a dictionary in a trie and then search the trie to see if passed words are spelt right. Also created functions to recursively count the words in the trie and recursively free the memory used by it at the end.
+
+## Pset5
+1. [Homepage](https://docs.cs50.net/2019/x/psets/5/homepage/homepage.html): create a small website with 4 pages. (Please don't judge me on this, I thoroughly half arsed it and just the minimum requirements.)

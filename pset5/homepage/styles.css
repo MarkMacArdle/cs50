@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+header {
+    font-size: h4;
+}
+
+#pageList {
+    width: 500px;
+    margin: auto;
+}
+
+#redLine {
+    color: red !important;
+}
+
+#squareColorBlock {
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
