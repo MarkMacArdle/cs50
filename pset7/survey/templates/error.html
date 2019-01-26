@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/alerts/ -->
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Error</h4>
+
+        <p>The following fields must be filled in:</p>
+
+        <ul>
+            {% for field in missing_fields %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.cs" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <table class="table" id="sheet_table">
+        <thead>
+            <tr>
+                <th scope="col">Entry</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Fruit</th>
+                <th scope="col">Seat</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for table_row in table_rows %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ table_row[0] }}</td>
+                    <td>{{ table_row[1] }}</td>
+                    <td>{{ table_row[2] }}</td>
+                    <td>{{ table_row[3] }}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#sheet_table').DataTable();
+        } );
+    </script>
+
+
+{% endblock %}

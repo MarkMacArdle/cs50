@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <h5>Name</h5>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="first_name" placeholder="First name" required>
+                    <div class="invalid-feedback">
+                        Enter first name
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last name" required>
+                    <div class="invalid-feedback">
+                        Enter last name
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <h5>Fruit</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="fruit" id="inlineRadio1" value="apples" required>
+                <label class="form-check-label" for="inlineRadio1">Apples</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="fruit" id="inlineRadio2" value="oranges" required>
+                <label class="form-check-label" for="inlineRadio2">Oranges</label>
+
+                <div class="invalid-feedback">
+                    Choose fruit
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <h5>Seat</h5>
+            <select class="form-control  col-md-3" name="seat" id="exampleFormControlSelect1" required>
+                <option selected="true" disabled="disabled" value="">Select seat</option>
+                <option value="chair">Chair</option>
+                <option value="stool">Stool</option>
+                <option value="couch">Couch</option>
+            </select>
+
+            <div class="invalid-feedback">
+                Choose seat
+            </div>
+        </div>
+
+        <br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+    //taken straight from validation section of bootstrap forms example page.
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    </script>
+
+{% endblock %}
