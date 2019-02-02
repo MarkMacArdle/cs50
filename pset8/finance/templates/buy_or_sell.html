@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ buy_or_sell|title}}
+{% endblock %}
+
+{% block main %}
+    <form action="/{{ buy_or_sell }}" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+
+            {% if buy_or_sell == "buy" %}
+                <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text" required>
+
+            {% else %}
+                <select class="form-control" name="symbol" required>
+                    <option selected="true" disabled="disabled" value="">Select stock</option>
+                    {% for stock in users_stocks %}
+                        <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }}</option>
+                    {% endfor %}
+                </select>
+
+            {% endif %}
+
+            <div class="invalid-feedback">
+                Enter symbol
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="shares" placeholder="Number of shares" type="number" min="1" required>
+            <div class="invalid-feedback">
+                Enter a positive number
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">{{ buy_or_sell|title}}</button>
+    </form>
+
+    <!-- Highlights a field in red when it hasn't been filled in -->
+    <script src="/static/validate_form.js"></script>
+
+{% endblock %}

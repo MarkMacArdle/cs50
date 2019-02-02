@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Funds
+{% endblock %}
+
+{% block main %}
+    <form action="/add_funds" method="post" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <input class="form-control" name="amount" placeholder="Amount" type="number" min="1" required>
+            <div class="invalid-feedback">
+                Enter a positive number
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add Funds</button>
+    </form>
+
+    <!-- Highlights a field in red when it hasn't been filled in -->
+    <script src="/static/validate_form.js"></script>
+
+{% endblock %}

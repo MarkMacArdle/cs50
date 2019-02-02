@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ table_type }}
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Share Price</th>
+                {% if table_type == "Portfolio" %}
+                    <th scope="col">Total</th>
+                {% else %}
+                    <th scope="col">Transaction Timestamp</th>
+                {% endif %}
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for row in table_rows %}
+                <tr>
+                        <td>{{ row["symbol"] }}</td>
+                        <td>{{ row["name"] }}</td>
+                    {% if table_type == "Portfolio" %}
+                        <td>{{ row["total_shares"] }}</td>
+                    {% else %}
+                        <td>{{ row["shares"] }}</td>
+                    {% endif %}
+                        <td>{{ row["price"] }}</td>
+                    {% if table_type == "Portfolio" %}
+                        <td>{{ row["total"] }}</td>
+                    {% else %}
+                        <td>{{ row["transaction_time"] }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+
+            {% if table_type == "Portfolio" %}
+                <tr>
+                    <td>Cash</td>
+                    <td colspan="3"></td>
+                    <td>{{ user_cash }}</td>
+                </tr>
+            {% endif %}
+
+        </tbody>
+
+        {% if table_type == "Portfolio" %}
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Grand Total</td>
+                    <td>{{ grand_total }}</td>
+                </tr>
+            </tfoot>
+        {% endif %}
+
+    </table>
+
+{% endblock %}

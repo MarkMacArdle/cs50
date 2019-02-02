@@ -46,3 +46,6 @@ Harvard's intro to computer science course.
 ## Pset7
 1. [Similarities](https://docs.cs50.net/2019/x/psets/7/similarities/similarities.html): create a form that could accept file inputs from user and write functions for splitting the text in them into lines, sentences or ngrams.
 2. [Survey](https://docs.cs50.net/2019/x/psets/7/survey/survey.html): With Flask for Python make a site that can accept user inputs from a validated form, save them on the server in a csv then show the csv contents to the user in a table.
+
+## Pset8
+1. [Finance](https://docs.cs50.net/2019/x/psets/8/finance/finance.html): build out a website with Flask, Bootstrap and SQLite that allows users sign up, log in and then buy or sell stocks on multiple forms and webpages.

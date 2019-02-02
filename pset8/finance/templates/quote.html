@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text" required>
+            <div class="invalid-feedback">
+                Enter stock symbol
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+    <!-- Highlights a field in red when it hasn't been filled in -->
+    <script src="/static/validate_form.js"></script>
+
+{% endblock %}

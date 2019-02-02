@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" id="registration_form" class="needs-validation" novalidate>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" id="username" placeholder="Username" type="text" required>
+            <div class="invalid-feedback">
+                Enter a username
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required>
+            <div class="invalid-feedback">
+                Enter a password
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm password" type="password" required>
+            <div class="invalid-feedback">
+                Confirm password
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="register_btn">Register</button>
+    </form>
+
+    <!-- Highlights a field in red when it hasn't been filled in -->
+    <script src="/static/validate_form.js"></script>
+    <script>
+        document.getElementById("register_btn").addEventListener("click", function(event){
+            //stop button submitting form as normal, allows code check it
+            event.preventDefault();
+
+            //send typed username to /check route and only if response is true (meaning the username is available) submit the form
+            $.get("/check",
+                  {username: $("#username").val()},
+                  (function(response) {
+                      if(response){
+                          document.getElementById("registration_form").submit()
+                      }else{
+                          alert("Username already taken")
+                      };
+                  })
+                 );
+        });
+    </script>
+
+{% endblock %}
