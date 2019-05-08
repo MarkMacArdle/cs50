@@ -49,3 +49,10 @@ Harvard's intro to computer science course.
 
 ## Pset8
 1. [Finance](https://docs.cs50.net/2019/x/psets/8/finance/finance.html): build out a website with Flask, Bootstrap and SQLite that allows users sign up, log in and then buy or sell stocks on multiple forms and webpages.
+
+## Final Project
+Stock market gamification. [Repo here](https://github.com/MarkMacArdle/stock_game) and [playable version here](http://ec2co-ecsel-5zub5659xyt4-1820632623.us-east-1.elb.amazonaws.com:5000/).
+
+Built off the pset8 to make a game from the stock market data pulled from IEX's api. Logos from companies on the Nasdaq 100 move with the stock price movements from the last full trading day. You play a little spaceman trying to jump up these stocks and sit on rising stocks to make money.
+
+The game front end was made with the Phaser 3 Javascript library and it runs on a Flask server. I ran that in an Alpine Linux Docker container and hosted it on AWS ECS. The highscores are kept in a MongoDB on Mongo Atlas.
